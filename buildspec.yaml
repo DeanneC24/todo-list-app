@@ -9,13 +9,12 @@ frontend:
       commands:
         - npm run build
   artifacts:
+    type: zip
     files:
       - public/**/*
       - src/**/*
       - package.json
       - appspec.yml
-    name: BuildArtifact
-    discard-paths: no
   cache:
     paths:
       - node_modules/**/*
