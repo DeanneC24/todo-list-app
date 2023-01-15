@@ -14,8 +14,11 @@ frontend:
       - '**/*'
       - public/**/*
       - src/**/*
-      - package.json
+      - package.json-
       - appspec.yml
+    base-directory: base_dir
+    name: build-artifact-name
+    discard-paths: no
   cache:
     paths:
       - node_modules/**/*
