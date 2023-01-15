@@ -9,12 +9,10 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: build
     files:
-      - '**/*'
       - public/**/*
       - src/**/*
-      - package.json-
+      - package.json
       - appspec.yml
     name: BuildArtifact
     discard-paths: no
