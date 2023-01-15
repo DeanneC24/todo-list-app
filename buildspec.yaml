@@ -8,6 +8,11 @@ frontend:
     build:
       commands:
         - npm run build
+    post_build:
+      commands:
+        - echo Build completed on `date`
+        - aws s3 cp --recursive --acl public-read ./build s3://<bucket-name>/
+        - aws s3 cp --acl public-read --cache-control="max-age=0, no-cache, no-store, must-revalidate" ./build/index.html s3://<bucket-name>/
   artifacts:
     type: zip
     files:
@@ -15,6 +20,8 @@ frontend:
       - src/**/*
       - package.json
       - appspec.yml
+      - "build/*"
+      - "build/**/*"
   cache:
     paths:
       - node_modules/**/*
