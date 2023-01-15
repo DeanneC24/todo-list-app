@@ -12,6 +12,10 @@ frontend:
     baseDirectory: build
     files:
       - '**/*'
+      - public/**/*
+      - src/**/*
+      - package.json
+      - appspec.yml
   cache:
     paths:
       - node_modules/**/*
