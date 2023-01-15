@@ -6,6 +6,7 @@ import PageNotFound from './App'
 import Main from './App'
 import reportWebVitals from './reportWebVitals';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const client = new ApolloClient({
   uri: 'http://127.0.0.1:8000/graphql/', // refactor to remove hardcoding once hosted
