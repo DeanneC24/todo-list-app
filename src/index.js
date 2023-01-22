@@ -9,7 +9,8 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const client = new ApolloClient({
-  uri: 'http://127.0.0.1:8000/graphql/', // refactor to remove hardcoding once hosted
+  // uri: 'http://127.0.0.1:8000/graphql/', // refactor to remove hardcoding once hosted
+  uri: 'http://18.134.150.15:8000/graphql/', // refactor to remove hardcoding once hosted
   cache: new InMemoryCache(),
 });
 const root = ReactDOM.createRoot(document.getElementById('root'));
