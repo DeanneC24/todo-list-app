@@ -1,41 +1,43 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
-import { useQuery, gql } from '@apollo/client'
+import { useQuery, useMutation  } from '@apollo/client'
+import {ALL_TODOS, ALL_CATEGORIES, SAVE_TODO} from './constants/queries'
+import AddTodoPopup from "./addTodoPopup"
 
-const ALL_TODOS = gql`
-  query {
-    allTasks {
-      id
-      name
-      status
-      description
-    }
-  }
-`;
+const TodoApp=() => {
 
-function LoadTodos() {
-  const { loading, error, data } = useQuery(ALL_TODOS);
+  const {loading, error, data, refetch}  = useQuery(ALL_TODOS, {
+      variables: {query: ''}
+    });
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error : {error.message}</p>;
 
-  return data.allTasks.map(({id, name, status, description}) => (
-    <div key={id}>
-      <h3>Task Name: {name}</h3>
-      <p>Status: {status}</p> 
-      <p>Description: {description}</p> 
-    </div>
-  ));
-}
+  const addTodo = () => {
+    console.log("Adding todo...")
+  }
 
-const TodoApp=() => { 
   return(
     <div>
-      <h1>Todo List</h1>
-      <h3>Outstanding tasks:</h3>
-      <LoadTodos/>
+      <h1>Todo <span className='purple-header'>List</span></h1>
+      <button className='delete-button' > X </button>
+      <AddTodoPopup refetchQueries={refetch}/>
+
+      {/* <button className='add-button' onClick={addTodo}> + </button> */}
+      <form className='todos-wrapper'>
+          <div>
+             {data &&
+                data.allTasks.map(( todo, i) => ( //change back to useEffect impl
+               
+                <div className='todo'>
+                  <li key={{i}}> {todo.name} </li>
+                </div>
+            ))}
+          </div>
+        </form>
     </div>
-    
-  ) 
+  )
 }
-  
+
+
 export default TodoApp

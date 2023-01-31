@@ -11,3 +11,263 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 50px;
+  color: #f7f7f7;
+  min-height: 100vh;
+  background: rgb(241, 241, 246);
+  text-rendering: optimizeSpeed;
+  font-family: "Roboto", sans-serif;
+}
+
+.App {
+  padding: 1rem;
+  max-width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  background: #333;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px;
+}
+
+h1 {
+  font-weight: 600;
+  font-family: Garamond, serif;
+  color: #000000;
+  font-size: 3.5rem;
+  letter-spacing: 0.2rem;
+  margin-top: 20px;
+  margin-right: 20px;
+  position:absolute;
+  top:10;
+  left:10;
+}
+
+h2 {
+  color: #000000;
+  text-align: center;
+}
+
+h3 {
+  color: #000000;
+}
+
+p {
+  color: black;
+}
+.input-wrapper {
+  margin: 3.5rem;
+}
+
+.todos-wrapper {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  /* background-color:  white; */
+  border-radius: 25px;
+  bottom: 100px;
+  position: relative;
+  top: 100px;
+  left: 60px;
+}
+
+.todo {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+.todoDescription {
+  width: 450px;
+  padding: 0.8em;
+  color:  hwb(0 52% 48%);
+}
+
+.todoName {
+  width: 450px;
+  padding: 0.8em;
+  color: hwb(0 52% 48%);
+}
+
+.todo-input {
+  margin: 20px;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  width: 120px;
+  padding: 0.8em;
+  cursor: pointer;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+
+.category-button {
+  color: #44c0b6;
+  border-left: none;
+}
+
+input,
+button {
+  font-size: 1em;
+  appearance: none;
+  color: currentcolor;
+  background: transparent;
+  border: 1px solid #828691;
+}
+
+.add-button {
+  background-color:  #6677f7;
+  color: white;
+  float: right;
+  width: 60px;
+  height: 60px;
+  margin-top: 20px;
+  margin-right: 20px;
+  position:absolute;
+  top: 10;
+  right: 80px;
+  border-radius: 15px;
+}
+
+.delete-button {
+  background-color:  #6677f7;
+  color: white;
+  float: right;
+  width: 60px;
+  height: 60px;
+  margin-top: 20px;
+  margin-right: 20px;
+  position:absolute;
+  top:10;
+  right:0;
+  border-radius: 15px;
+}
+
+.close-popup-button {
+  background-color:  #6677f7;
+  /* position:relative;
+  margin-top: 20px;
+  margin-right: 100px; */
+  color: white;
+}
+
+.submit-todo {
+  background-color:  #6677f7;
+  color: white;
+  margin: 20px;
+}
+.popup-footer {
+  border-top: #333;
+}
+
+.category-button {
+  font-family: Garamond, serif;
+  background-color:  #6677f7;
+  color: white;
+  font-size: 16px;
+  margin: 4px 16px;
+  width: 200px;
+  height: 50px;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0px;
+}
+
+li {
+  width: 450px;
+  padding: 0.85em;
+  text-align: left;
+  /* margin-bottom: 0.5rem; */
+  margin: 10px 0;
+  background: white;
+  letter-spacing: 0.02rem;
+  transition: all 0.3s ease-out;
+  /* border-left: 5px solid #cf972e; */
+  color: #000000;
+  border-radius: 15px;
+}
+
+
+label {
+  /* width: 450px;
+  padding: 0.85em; */
+  /* text-align: left; */
+  /* margin-bottom: 0.5rem; */
+  /* margin: 10px 0; */
+  /* background: white;
+  letter-spacing: 0.02rem;
+  transition: all 0.3s ease-out; */
+  /* border-left: 5px solid #cf972e; */
+  color: #000000;
+  /* border-radius: 15px; */
+}
+
+li:last-child {
+  margin-bottom: 0px;
+}
+
+.empty {
+  font-size: 20px;
+  font-weight: 400;
+  color: #cf972e;
+  letter-spacing: 0.2rem;
+}
+
+.purple-header {
+  color: #6677f7;
+}
+
+.sidenav {
+  width: 300px;
+  height: 80%;
+  position: fixed;
+  z-index: 1;
+  top: 180px;
+  left: 15px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidenav-title {
+  color: #6677f7;
+  font-size: 30px;
+  font-family: Garamond, serif;
+}
+
+fieldset {
+  overflow: hidden
+}
+
+.some-class {
+  float: left;
+  clear: none;
+}
+
+label {
+  float: left;
+  clear: none;
+  display: block;
+  padding: 0px 1em 0px 8px;
+}
+
+input[type=radio],
+input.radio {
+  float: left;
+  clear: none;
+  margin: 2px 0 0 2px;
+}
